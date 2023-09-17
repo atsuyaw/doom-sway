@@ -61,7 +61,7 @@ button:hover {
 #workspaces button.focused {
     background-color: @accent;
     color : @background;
-    box-shadow: inset 0 -.3ex @highlight;
+/*    box-shadow: inset 0 -.2ex @highlight;*/
 }
 
 #workspaces button.urgent {
@@ -74,6 +74,7 @@ button:hover {
 }
 
 #custom-launcher,
+#custom-separator,
 #clock,
 #battery,
 #cpu,
@@ -108,7 +109,7 @@ button:hover {
 
 #window {
   margin: 0 1em;
-  box-shadow: inset 0 -0.3ex @text;
+  box-shadow: inset 0 -0.2ex @text;
 }
 
 #workspaces {
@@ -129,7 +130,7 @@ button:hover {
     color: @background;
     font-family:pixeled;
     font-size:14px;
-    box-shadow: inset 0 -3px @highlight;
+/*    box-shadow: inset 0 -.2ex @highlight;*/
     background-color: @accent;
     margin-left:20px;
     padding-left: 20px;
