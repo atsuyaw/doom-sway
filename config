@@ -5,10 +5,11 @@
     // "width": 1280, // Waybar width
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "custom/separator", "sway/window"],
-    "modules-center": [],
-    "modules-right": ["cpu","temperature","backlight", "pulseaudio", "battery", "network", "custom/nmvpn", "custom/separator", "tray", "clock"],
-    // Modules configuration
+    "modules-left": ["custom/launcher", "sway/workspaces", "sway/scratchpad", "sway/mode", "custom/media", "custom/separator", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu","temperature","backlight", "pulseaudio", "battery", "network", "custom/nmvpn", "custom/separator", "tray"],
+
+// Modules configuration
 	"custom/launcher":{
 		"format": "󰣇",
 		"on-click": "wofi --show drun"
@@ -19,21 +20,8 @@
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
-		"format": "<span font='16'>{icon}</span>",
-         	"format-icons": {
-             		"1": "󰬺",
-             		"2": "󰬻",
-             		"3": "󰬼",
-             		"4": "󰬽",
-             		"5": "󰬾",
-             		"6": "󰬿",
-             		"7": "󰭀",
-             		"8": "󰭁",
-             		"9": "󰭂",
-             		"10": "󰿩"
-         }
-     },
-
+		"format": "{}",
+  },
 
     "keyboard-state": {
         "numlock": true,
@@ -45,10 +33,10 @@
         }
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}"
     },
     "sway/scratchpad": {
-        "format": "{icon} {count}",
+        "format": "{icon}  {count}",
         "show-empty": false,
         "format-icons": ["", "󱂬"],
         "tooltip": true,
@@ -84,12 +72,12 @@
       "format": "{title}",
       "max-length": 50,
       "rewrite": {
-        "foot": "󰆍 foot",
-        "Pympress (.*)": "󰐯 Pympress $1",
-        "(.*) - Slack": "󰒱 $1",
-        "(.*) - Thunar": "󰉋 $1",
-        "(.*) - Vivaldi": "󰖟 $1",
-        "(.*) - Code - OSS": "󰨞 $1"
+        "foot": "󰅭  foot",
+        "Pympress (.*)": "󰐯  Pympress $1",
+        "(.*) - Slack": "󰒱  $1",
+        "(.*) - Thunar": "󰉋  $1",
+        "(.*) - Vivaldi": "󰖟  $1",
+        "(.*) - Code - OSS": "󰨞  $1"
       }
     },
     "idle_inhibitor": {
@@ -100,15 +88,13 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+      "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y-%m-%d}</big>\n<big>{calendar}</big>",
-        "format-alt": "{:%Y-%m-%d}",
-        "format": "{:%Y-%m-%d %H:%M:%S}",
-        "interval": 1
+      "format": "󰃰  {:%Y-%m-%d %H:%M:%S}",
+      "tooltip-format": "<big>{:%Y-%m-%d}</big>\n<big>{calendar}</big>",
+      "format-alt": "{:%Y-%m-%d}",
+      "interval": 1
     },
     "cpu": {
         "format": "󰍛 {usage}%",
@@ -153,14 +139,13 @@
         "bat": "BAT2"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format": "{icon}",
-        "format-alt": "{icon} {ipaddr}/{cidr}",
-        "format-wifi": "{icon} {essid}({bandwidthTotalBytes})",
-        "format-ethernet": "{icon} {ifname} {bandwidthTotalBytes}",//" {ipaddr}/{cidr}",
-        "tooltip-format": " {ifname} via {gwaddr}",
-        "format-linked": "{icon} {ifname}",
-        "format-disconnected": "{icon} Disconnected",
+        "format-alt": "{icon}  {ipaddr}/{cidr}",
+        "format-wifi": "{icon}  {essid} ({bandwidthTotalBytes})",
+        "format-ethernet": "{icon}  {ifname} {bandwidthTotalBytes}",//" {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+        "format-linked": "{icon}  {ifname}",
+        "format-disconnected": "{icon}",
         "format-icons":{
           "wifi":["󰤯","󰤟","󰤢","󰤥","󰤨"],
           "ethernet":"󰈁",
